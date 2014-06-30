@@ -738,7 +738,7 @@ class McxNowSession():
                 skOk=True
             if skOk:
                 self.__LoadUserOrders__(cur, True)
-                if self.User.Book.Orders[cur]<>None:
+                if self.User.Book.Orders[cur] is not None:
                     if id in self.User.Book.Orders[cur].Id:
                         if self.User.Book.Orders[cur].Id[id].Confirmed:
                             self.Return=None
@@ -794,7 +794,7 @@ class McxNowSession():
                 skOk=True
             if skOk:
                 self.__LoadUserOrders__(cur, True)
-                if self.User.Book.Orders[cur]<>None:
+                if self.User.Book.Orders[cur] is not None:
                     if id in self.User.Book.Orders[cur].Id:
                         self.Return=self.User.Book.Orders[cur].GetOrderInfo(id)
                         self.Session.get(MCXNOW_DOMAIN+MCXNOW_ACTION["canceltrade"]+"&sk="+self.User.SecretKey+"&cur="+cur+'&id='+str(id))

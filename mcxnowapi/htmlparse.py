@@ -55,7 +55,7 @@ class UserAccountHTMLParser(HTMLParser):
                         if attr[1]=='fundbox':
                             self.foundlevel=1
         else:
-            if tag<>'input':
+            if tag != 'input':
                 self.foundlevel+=1
         
     def handle_endtag(self, tag):

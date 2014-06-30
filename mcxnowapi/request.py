@@ -38,10 +38,10 @@ def request(S=None, method=None, action=None, data=None):
     # 
     # error handling
     #
-    if S==None or action==None or method==None:
+    if S is None or action is None or method is None:
         return 0
     else:
-        if method=='post' and data<>None:
+        if method == 'post' and data is not None:
             try:
                 result=S.post(action, data)
             except:
